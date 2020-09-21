@@ -1,4 +1,5 @@
 let getLines = function getLines (filename, lineCount, callback) {
+  var fs = require('fs')
   let stream = fs.createReadStream(filename, {
     flags: "r",
     encoding: "utf-8",
@@ -30,6 +31,6 @@ let getLines = function getLines (filename, lineCount, callback) {
 
 };
 
-exports.getLines = function() {
+exports.getLinesModules = function(filename, lineCount, callback) {
   return getLines (filename, lineCount, callback)
 };
